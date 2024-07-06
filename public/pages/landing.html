@@ -15,8 +15,8 @@
             <div>About</div>
         </div>
         <div id="nav-buttons">
-            <div><button class="button-74" role="button">Login</button></div>
-            <div><button class="button-74" role="button">SignUp</button></nav></div>
+            <div><button class="button-74" id="login"role="button">Login</button></div>
+            <div><button class="button-74" id="signup"role="button">SignUp</button></nav></div>
         </div>
     </nav>
 
@@ -26,6 +26,13 @@
         <button class="button-74" role="button">Get Started</button>
     </div>
 
-
+    <script>
+        document.getElementById("login").addEventListener("click", () => {
+            window.location.href = "/login";
+        })
+        document.getElementById("signup").addEventListener("click", () => {
+            window.location.href = "/signup";
+        })
+    </script>
 </body>
 </html>
