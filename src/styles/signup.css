@@ -2,15 +2,17 @@
 *{
     margin:0;
     padding: 0;
+    color: var(--dark_green);
 }
 #signupform{
     width:400px;
     height: 500px;
-    margin: 100px auto;
-    background-color: aliceblue;
+    margin: 50px auto;
+    background-color: var(--light_green);
     padding: 60px;
     border-radius: 20px ;
     text-align: center;
+    border: 3px solid var(--dark_green);
 }
 
 body{
@@ -18,11 +20,11 @@ body{
 }
 /* CSS */
 #signup-button {
-  background-color: #eaf3f0;
-  border: 2px solid #422800;
+  background-color: var(--brown);
+  border: 2px solid var(--dark_brown);
   border-radius: 10px;
-  box-shadow: #050505 4px 4px 0 0;
-  color: #422800;
+  box-shadow: var(--dark_brown) 4px 4px 0 0;
+  color: var(--dark_brown);
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
@@ -37,7 +39,7 @@ body{
 }
 
 #signup-button:hover {
-  background-color: #fff;
+  background-color: var(--light_green);
 }
 
 #signup-button:hover:active {
@@ -54,4 +56,9 @@ body{
 input{
     padding: 10px;
     border-radius: 10px;
+    border: 3px solid var(--dark_green);
+}
+
+.footer{
+  color: var(--dark_green);
 }
