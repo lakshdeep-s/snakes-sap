@@ -19,7 +19,7 @@ nav{
     gap: 40px;
     margin-left: 30rem;
     margin-right: 40px;
-
+    font-weight: 500;
 }
 
 #nav-buttons{
@@ -76,11 +76,11 @@ p{
 }
 
 .button-74:hover {
-  background-color: #fff;
+  background-color: var(--light_green);
 }
 
 .button-74:active {
-  box-shadow: #422800 2px 2px 0 0;
+  box-shadow: var(--dark_brown) 2px 2px 0 0;
   transform: translate(2px, 2px);
 }
 
@@ -95,4 +95,5 @@ p{
   font-weight: 600;
   font-size: 25px;
   width: 100%;
+  font-style: italic;
 }
