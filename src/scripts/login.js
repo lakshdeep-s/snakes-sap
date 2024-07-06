@@ -30,7 +30,7 @@ document.getElementById("login-button").addEventListener("click", async() => {
     } catch(err) {
         console.log(err);
         messageDiv.style.color = "yellow";
-        messageDiv.innerHTML = result.message;
+        messageDiv.innerHTML = err;
     }
 })
 
