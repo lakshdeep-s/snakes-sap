@@ -1,17 +1,24 @@
 @import "./global.css";
 
+*{
+  background-color: var(--light_green);
+  color: var(--dark_green);
+}
+
 nav{
     display: flex;
     padding: 20px;
     justify-content: space-between;
     align-items: center;
-    background-color: brown;
+    background-color:  var(--light_green);
 }
 
 #dashboard-about{
     display: flex;
-    justify-content: space-between;
-    gap: 1rem;
+    justify-content: flex-end;
+    gap: 40px;
+    margin-left: 30rem;
+    margin-right: 40px;
 
 }
 
@@ -50,17 +57,17 @@ p{
 }
 
 .button-74 {
-  background-color: #fbeee0;
-  border: 2px solid #422800;
+  background-color: var(--brown);
+  border: 2px solid var(--dark_brown);
   border-radius: 30px;
-  box-shadow: #422800 4px 4px 0 0;
-  color: #422800;
+  box-shadow: var(--dark_brown) 4px 4px 0 0;
+  color: var(--dark_brown);
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
   font-size: 18px;
   padding: 0 18px;
-  line-height: 50px;
+  line-height: 40px;
   text-align: center;
   text-decoration: none;
   user-select: none;
@@ -82,4 +89,10 @@ p{
     min-width: 100px;
     padding: 0 25px;
   }
+}
+
+#logo{
+  font-weight: 600;
+  font-size: 25px;
+  width: 100%;
 }

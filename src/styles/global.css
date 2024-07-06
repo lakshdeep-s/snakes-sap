@@ -2,8 +2,9 @@
 :root {
     --light_green: #DAF7A6;
     --dark_green: #215918;
-    --blue: #acb4cc;
-    --yellow:#eaea8c;
+    --random: #9BABB8;
+    --dark_brown: #6C3428;
+    --brown: #B99470;
 }
 
 *, *::before, *::after {
