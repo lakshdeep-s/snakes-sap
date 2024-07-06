@@ -25,7 +25,7 @@ document.getElementById("login-button").addEventListener("click", async() => {
             localStorage.setItem('accessToken', result.accessToken);
             localStorage.setItem('refreshToken', result.refreshToken);
 
-            scheduleTokenRefresh();
+            window.location.href = '/dashboard'
         }
     } catch(err) {
         console.log(err);
@@ -38,12 +38,24 @@ const scheduleTokenRefresh = () => {
     const accessToken = localStorage.getItem('accessToken');
     if (!accessToken) return;
 
-    const { exp } = jwt.decode(accessToken);
+    // Split the JWT token parts (header, payload, signature)
+    const [, payloadBase64] = accessToken.split('.');
+    const payload = JSON.parse(atob(payloadBase64));
 
-    const timeUntilRefresh = exp * 1000 - Date.now() - 60 * 1000; // Refresh 1 minute before expiry
+    const exp = payload.exp; // Expiration time in seconds
+
+    if (!exp) {
+        console.error("Invalid access token format or expiration");
+        return;
+    }
+
+    const currentTime = Math.floor(Date.now() / 1000); // Current time in seconds
+
+    const timeUntilRefresh = (exp * 1000) - (currentTime * 1000) - (60 * 1000); // Refresh 1 minute before expiry
 
     setTimeout(refreshToken, timeUntilRefresh);
 };
+
 
 const refreshToken = async () => {
     try {
