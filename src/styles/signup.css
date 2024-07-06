@@ -1,1 +1,57 @@
-@import "./global.css"
+@import "./global.css";
+*{
+    margin:0;
+    padding: 0;
+}
+#signupform{
+    width:400px;
+    height: 500px;
+    margin: 100px auto;
+    background-color: aliceblue;
+    padding: 60px;
+    border-radius: 20px ;
+    text-align: center;
+}
+
+body{
+    background-image: url("");
+}
+/* CSS */
+#signup-button {
+  background-color: #eaf3f0;
+  border: 2px solid #422800;
+  border-radius: 10px;
+  box-shadow: #050505 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 12px;
+  padding: 0 18px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#signup-button:hover {
+  background-color: #fff;
+}
+
+#signup-button:hover:active {
+  box-shadow: #422800 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+#signup-button{
+    min-width: 80px;
+    padding: 0 25px;
+  }
+}
+input{
+    padding: 10px;
+    border-radius: 10px;
+}
