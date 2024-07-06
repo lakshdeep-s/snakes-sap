@@ -22,6 +22,10 @@ document.getElementById("login-button").addEventListener("click", async() => {
             messageDiv.innerHTML = result.message;
             messageDiv.style.backgroundColor = "green";
             messageDiv.style.color = "white"
+            localStorage.setItem('accessToken', result.accessToken);
+            localStorage.setItem('refreshToken', result.refreshToken);
+
+            scheduleTokenRefresh();
         }
     } catch(err) {
         console.log(err);
@@ -29,3 +33,43 @@ document.getElementById("login-button").addEventListener("click", async() => {
         messageDiv.innerHTML = result.message;
     }
 })
+
+const scheduleTokenRefresh = () => {
+    const accessToken = localStorage.getItem('accessToken');
+    if (!accessToken) return;
+
+    const { exp } = jwt.decode(accessToken);
+
+    const timeUntilRefresh = exp * 1000 - Date.now() - 60 * 1000; // Refresh 1 minute before expiry
+
+    setTimeout(refreshToken, timeUntilRefresh);
+};
+
+const refreshToken = async () => {
+    try {
+        const refreshToken = localStorage.getItem('refreshToken');
+        if (!refreshToken) {
+            console.error("Refresh Token not found");
+            return;
+        }
+
+        const response = await fetch("/auth/refresh-token", {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ refreshToken })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            localStorage.setItem('accessToken', result.accessToken);
+            scheduleTokenRefresh();
+        } else {
+            console.error("Failed to refresh token:", result.message);
+        }
+    } catch (err) {
+        console.error("Error refreshing token:", err);
+    }
+};
