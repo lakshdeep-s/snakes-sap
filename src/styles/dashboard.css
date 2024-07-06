@@ -1,0 +1,47 @@
+@import "./global.css";
+
+body {
+    background-color: var(--light_green);
+    padding: 1rem;
+}
+
+.header {
+    color: var(--dark_green);
+    font-size: 3rem;
+    letter-spacing: -2px;
+}
+
+.welcome {
+    font-size: 1.5rem;
+    color: var(--dark_green);
+    letter-spacing: -1px;
+}
+
+.welcome > p {
+    font-weight: 600;
+}
+
+
+.welcome > p > span {
+    color: blue;
+}
+
+.get-reports {
+    margin-top: 2rem;
+}
+
+.get-reports > button {
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(176, 107, 67);
+    color: white;
+    position: relative;
+}
+
+.get-daily-report {
+    padding: 0.8rem 1rem;
+}
+
+.get-monthly-report {
+    padding: 0.8rem 1rem;
+}
