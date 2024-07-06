@@ -2,7 +2,7 @@
 
 .form{
     background-color: rgb(158, 238, 248);
-    margin: 100px auto;
+    margin: 70px auto;
     width: 400px;
     padding: 50px;
     display: flex;
@@ -11,7 +11,8 @@
     border-radius: 10px;
 }
 .form h1{
-    margin-bottom: 25px;
+    margin-bottom: 60px;
+    
 }
 .form input{
     display: block;
@@ -60,10 +61,17 @@
 .form hr{
    height: 1px;
    width:300px; 
-   margin-top: 40px;
+   margin-top: 80px;
    background-color:black;
    border: none;
 }
 .form p{
-    margin-top: 25px;
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 0.7rem;
 } 
+.footer{
+  position: relative;
+  top:20px;
+  text-align: center;
+}
